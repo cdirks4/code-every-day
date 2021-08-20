@@ -507,6 +507,9 @@
 // console.log(pigIt('o Pig latin is cool'));
 
 //https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript
+// 4kata
+
+// Incomplete
 
 // var moveZeros = function (arr) {
 // 	let zeros = [];
@@ -523,3 +526,258 @@
 // 	});
 // 	return notZero;
 // };
+// function isInteresting(number, awesomePhrases) {
+// 	let same = true;
+// 	let sameTwo = true;
+// 	let sameThree = true;
+// 	let sameFour = true;
+// 	let sameFive = true;
+// 	let sameNumber = number.toString();
+// 	sameNumber = sameNumber.split('');
+// 	let sameNumberOne = number + 2;
+// 	sameNumberOne = sameNumberOne.toString();
+// 	sameNumberOne = sameNumberOne.split('');
+// 	let sameNumberTwo = number + 1;
+// 	sameNumberTwo = sameNumberTwo.toString();
+// 	sameNumberTwo = sameNumberTwo.split('');
+// 	let sameNumberThree = number - 2;
+// 	sameNumberThree = sameNumberThree.toString();
+// 	sameNumberThree = sameNumberThree.split('');
+// 	let sameNumberFour = number - 1;
+// 	sameNumberFour = sameNumberFour.toString();
+// 	sameNumberFour = sameNumberFour.split('');
+// 	let incrementing = true;
+// 	let incrementingOne = true;
+// 	let incrementingTwo = true;
+// 	let incrementingThree = true;
+// 	let incrementingFour = true;
+// 	let decrementing = true;
+// 	let decrementingOne = true;
+// 	let decrementingTwo = true;
+// 	let decrementingThree = true;
+// 	let decrementingFour = true;
+// 	for (let i = 0; i < sameNumber.length; i++) {
+// 		if (sameNumber[i] + 1 !== sameNumber[i + 1]) {
+// 			incrementing = false;
+// 		}
+
+// 		if (sameNumberOne[i] + 1 !== sameNumberOne[i + 1]) {
+// 			incrementingOne = false;
+// 		}
+// 		if (sameNumberTwo[i] + 1 !== sameNumberTwo[i + 1]) {
+// 			incrementingTwo = false;
+// 		}
+// 		if (sameNumberThree[i] + 1 !== sameNumberThree[i + 1]) {
+// 			incrementingThree = false;
+// 		}
+// 		if (sameNumberFour[i] + 1 !== sameNumberFour[i + 1]) {
+// 			incrementingFour = false;
+// 		}
+// 		if (sameNumber[i] - 1 !== sameNumber[i + 1]) {
+// 			decrementing = false;
+// 		}
+
+// 		if (sameNumberOne[i] - 1 !== sameNumberOne[i + 1]) {
+// 			decrementingOne = false;
+// 		}
+// 		if (sameNumberTwo[i] - 1 !== sameNumberTwo[i + 1]) {
+// 			decrementingTwo = false;
+// 		}
+// 		if (sameNumberThree[i] - 1 !== sameNumberThree[i + 1]) {
+// 			decrementingThree = false;
+// 		}
+// 		if (sameNumberFour[i] + 1 !== sameNumberFour[i + 1]) {
+// 			decrementingFour = false;
+// 		}
+// 		if (sameNumber[i] !== sameNumber[0]) {
+// 			same = false;
+// 		}
+// 		if (sameNumberOne[i] !== sameNumberOne[0]) {
+// 			sameTwo = false;
+// 		}
+// 		if (sameNumberFour[i] !== sameNumberFour[0]) {
+// 			sameThree = false;
+// 		}
+// 		if (sameNumberThree[i] !== sameNumberThree[0]) {
+// 			sameFour = false;
+// 		}
+// 		if (sameNumberTwo[i] !== sameNumberTwo[0]) {
+// 			sameFive = false;
+// 		}
+// 	}
+// 	let checkingZeros = number.toString();
+// 	checkingZeros = checkingZeros.split('');
+// 	checkingZeros = checkingZeros.slice(1, checkingZeros.length);
+// 	checkingZeros = checkingZeros.join('');
+// 	checkingZeros = parseInt(checkingZeros);
+// 	if (checkingZeros + 2 === 0) {
+// 		return 1;
+// 	} else if (checkingZeros - 2 === 0) {
+// 		return 1;
+// 	} else if (checkingZeros - 1 === 0) {
+// 		return 1;
+// 	} else if (checkingZeros + 1 === 0) {
+// 		return 1;
+// 	} else if (checkingZeros === 0) {
+// 		return 2;
+// 	}
+// 	for (let i = 0; i < awesomePhrases.length; i++) {
+// 		switch (awesomePhrases[i]) {
+// 			case number:
+// 				return 2;
+// 			case number - 1:
+// 				return 1;
+// 			case number - 2:
+// 				return 1;
+// 			case number + 1:
+// 				return 1;
+// 			case number + 2:
+// 				return 1;
+// 			default:
+// 				break;
+// 		}
+// 	}
+// 	let caseOne = number.toString();
+// 	caseOne = caseOne.split('');
+// 	let caseTwo = number + 2;
+// 	caseTwo = caseTwo.toString();
+// 	caseTwo = caseTwo.split('');
+// 	let caseThree = number + 1;
+// 	caseThree = caseThree.toString();
+// 	caseThree = caseThree.split('');
+// 	let caseFour = number - 1;
+// 	caseFour = caseFour.toString();
+// 	caseFour = caseFour.split('');
+// 	let caseFive = number - 2;
+// 	caseFive = caseFive.toString();
+// 	caseFive = caseFive.split('');
+// 	let j = 1;
+// 	let answerTwo = 1;
+// 	let answerThree = 1;
+// 	let answerFour = 1;
+// 	let answerFive = 1;
+// 	let answerOne = 2;
+// 	for (let i = 0; i < caseOne.length; i++) {
+// 		console.log(caseTwo[i], caseTwo[caseOne.length - j]);
+// 		if (caseOne[i] !== caseOne[caseOne.length - j]) {
+// 			answerOne = null;
+// 		}
+// 		if (caseTwo[i] !== caseTwo[caseOne.length - j]) {
+// 			answerTwo = null;
+// 		}
+// 		if (caseThree[i] !== caseThree[caseOne.length - j]) {
+// 			answerThree = null;
+// 		}
+// 		if (caseFour[i] !== caseFour[caseOne.length - j]) {
+// 			answerFour = null;
+// 		}
+// 		if (caseFive[i] !== caseFive[caseOne.length - j]) {
+// 			answerFive = null;
+// 		}
+// 		j++;
+// 	}
+// 	if (answerOne === 2) {
+// 		return 2;
+// 	}
+// 	switch (1) {
+// 		case answerFive:
+// 			return 1;
+// 		case answerFour:
+// 			return 1;
+// 		case answerThree:
+// 			return 1;
+// 		case answerTwo:
+// 			return 1;
+// 		default:
+// 			break;
+// 	}
+// 	switch (true) {
+// 		case same:
+// 			return 2;
+// 		case sameFour:
+// 			return 1;
+// 		case sameThree:
+// 			return 1;
+// 		case sameTwo:
+// 			return 1;
+// 		case sameFive:
+// 			return 1;
+// 		case decrementing:
+// 			return 2;
+// 		case decrementingFour:
+// 			return 1;
+// 		case decrementingThree:
+// 			return 1;
+// 		case decrementingTwo:
+// 			return 1;
+// 		case decrementingOne:
+// 			return 1;
+// 		case incrementing:
+// 			return 2;
+// 		case incrementingFour:
+// 			return 1;
+// 		case incrementingThree:
+// 			return 1;
+// 		case incrementingTwo:
+// 			return 1;
+// 		case incrementingOne:
+// 			return 1;
+// 		default:
+// 			break;
+// 	}
+// 	return 0;
+// }
+
+// console.log(isInteresting(3, [1337, 256]));
+
+//https://www.codewars.com/kata/57a1fd2ce298a731b20006a4/solutions/javascript/me/best_practice
+//8kata
+// function isPalindrome(x) {
+// 	x = x.toLowerCase();
+// 	x = x.split('');
+// 	for (i = 0; i < x.length; i++) {
+// 		if (x[i] !== x[x.length - i - 1]) {
+// 			return false;
+// 		}
+// 	}
+// 	return true;
+// }
+
+//https://www.codewars.com/kata/5a2c22271f7f709eaa0005d3/train/javascript
+// 6kyu
+function solve(s) {
+	s = s.toLowerCase();
+	s = s.split('');
+	let tester = [];
+	let holder = [];
+	let ok = true;
+	for (i = 0; i < s.length; i++) {
+		let remove = true;
+
+		if (s[i] !== s[s.length - i - 1]) {
+			ok = false;
+		}
+		holder = s[i];
+		s[i] = '';
+		tester = s.join('');
+		tester = tester.split('');
+
+		for (j = 0; j < tester.length; j++) {
+			if (tester[j] !== tester[tester.length - j - 1]) {
+				remove = false;
+			}
+		}
+
+		if (ok === true) remove = false;
+		s[i] = holder;
+		switch (true) {
+			case remove:
+				return 'remove one';
+
+			default:
+				break;
+		}
+	}
+	if (ok) return 'OK';
+	return 'not possible';
+}
