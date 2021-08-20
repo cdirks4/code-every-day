@@ -471,37 +471,55 @@
 
 //https://www.codewars.com/kata/520b9d2ad5c005041100000f/solutions/javascript
 
-function pigIt(str) {
-	str = str.split('');
-	let arr = [];
-	let held = null;
-	let length = str.length;
-	console.log(str);
-	for (let i = 0; i < str.length; i++) {
-		if (str[i - 1] === undefined && str[i + 1] === ' ') {
-			arr.push(str[i]);
-			arr.push('ay');
-			length += 1;
-		} else if (str[i - 1] === ' ' && str[i + 1] === ' ') {
-			arr.push(str[i]);
-			arr.push('ay');
-			length += 1;
-		} else if (str[i - 1] === undefined || str[i - 1] === ' ') {
-			held = str[i];
-		} else if (str[i + 1] === ' ' || str[i + 1] === undefined) {
-			arr.push(str[i]);
-			arr.push(held);
-			arr.push('ay');
-			length += 1;
-		} else {
-			arr.push(str[i]);
-		}
-	}
-	console.log(arr.length);
-	console.log(length);
-	if (arr.length !== length) {
-		arr.push(held);
-	}
-	return arr.join('');
-}
-console.log(pigIt('o Pig latin is cool'));
+// function pigIt(str) {
+// 	str = str.split('');
+// 	let arr = [];
+// 	let held = null;
+// 	let length = str.length;
+// 	console.log(str);
+// 	for (let i = 0; i < str.length; i++) {
+// 		if (str[i - 1] === undefined && str[i + 1] === ' ') {
+// 			arr.push(str[i]);
+// 			arr.push('ay');
+// 			length += 1;
+// 		} else if (str[i - 1] === ' ' && str[i + 1] === ' ') {
+// 			arr.push(str[i]);
+// 			arr.push('ay');
+// 			length += 1;
+// 		} else if (str[i - 1] === undefined || str[i - 1] === ' ') {
+// 			held = str[i];
+// 		} else if (str[i + 1] === ' ' || str[i + 1] === undefined) {
+// 			arr.push(str[i]);
+// 			arr.push(held);
+// 			arr.push('ay');
+// 			length += 1;
+// 		} else {
+// 			arr.push(str[i]);
+// 		}
+// 	}
+// 	console.log(arr.length);
+// 	console.log(length);
+// 	if (arr.length !== length) {
+// 		arr.push(held);
+// 	}
+// 	return arr.join('');
+// }
+// console.log(pigIt('o Pig latin is cool'));
+
+//https://www.codewars.com/kata/52597aa56021e91c93000cb0/train/javascript
+
+// var moveZeros = function (arr) {
+// 	let zeros = [];
+// 	let notZero = [];
+// 	arr.forEach((ele) => {
+// 		if (ele === 0) {
+// 			zeros.push(ele);
+// 		} else {
+// 			notZero.push(ele);
+// 		}
+// 	});
+// 	zeros.forEach((zer) => {
+// 		notZero.push(zero);
+// 	});
+// 	return notZero;
+// };
