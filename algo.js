@@ -815,20 +815,83 @@
 
 //6kyu
 
-function duplicateCount(text) {
-	text = text.toLowerCase();
-	let total = 0;
-	text = text.split('');
-	let obj = text.reduce((acc, curr) => {
-		if (acc[curr]) {
-			acc[curr]++;
-		} else {
-			acc[curr] = 1;
+// function duplicateCount(text) {
+// 	text = text.toLowerCase();
+// 	let total = 0;
+// 	text = text.split('');
+// 	let obj = text.reduce((acc, curr) => {
+// 		if (acc[curr]) {
+// 			acc[curr]++;
+// 		} else {
+// 			acc[curr] = 1;
+// 		}
+// 		return acc;
+// 	}, {});
+// 	for (key in obj) {
+// 		if (obj[key] > 1) total++;
+// 	}
+// 	return total;
+// }
+
+// https://www.codewars.com/kata/5267faf57526ea542e0007fb/train/javascript
+
+//5kyu
+
+Math.round = function (number) {
+	number = number.toString();
+	number = number.split('');
+	for (let i = number.length; i > 0; i--) {
+		if (number[i] === '.') {
+			if (number[i + 1] > 4) {
+				number.splice(i);
+
+				if (number.length === 1) {
+					number = parseInt(number);
+					return (number += 1);
+				} else {
+					number = number.join('');
+					number = parseInt(number);
+					number += 1;
+					return number;
+				}
+			} else {
+				number.splice(i);
+			}
 		}
-		return acc;
-	}, {});
-	for (key in obj) {
-		if (obj[key] > 1) total++;
 	}
-	return total;
-}
+	number = number.join('');
+	console.log(number);
+
+	return parseInt(number);
+};
+
+Math.ceil = function (number) {
+	number = number.toString();
+	number = number.split('');
+	let decimalCheck = new Set(number);
+	if (!decimalCheck.has('.')) {
+		return parseInt(number.join(''));
+	}
+	for (let i = number.length; i > 0; i--) {
+		if (number[i] === '.') {
+			number.splice(i);
+		}
+	}
+	number = number.join('');
+	number = parseInt(number);
+	number += 1;
+	return number;
+};
+
+Math.floor = function (number) {
+	number = number.toString();
+	number = number.split('');
+	for (let i = number.length; i > 0; i--) {
+		if (number[i] === '.') {
+			number.splice(i);
+		}
+	}
+	number = number.join('');
+	number = parseInt(number);
+	return parseInt(number);
+};
