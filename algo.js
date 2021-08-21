@@ -837,61 +837,81 @@
 
 //5kyu
 
-Math.round = function (number) {
-	number = number.toString();
-	number = number.split('');
-	for (let i = number.length; i > 0; i--) {
-		if (number[i] === '.') {
-			if (number[i + 1] > 4) {
-				number.splice(i);
+// Math.round = function (number) {
+// 	number = number.toString();
+// 	number = number.split('');
+// 	for (let i = number.length; i > 0; i--) {
+// 		if (number[i] === '.') {
+// 			if (number[i + 1] > 4) {
+// 				number.splice(i);
 
-				if (number.length === 1) {
-					number = parseInt(number);
-					return (number += 1);
-				} else {
-					number = number.join('');
-					number = parseInt(number);
-					number += 1;
-					return number;
-				}
-			} else {
-				number.splice(i);
-			}
+// 				if (number.length === 1) {
+// 					number = parseInt(number);
+// 					return (number += 1);
+// 				} else {
+// 					number = number.join('');
+// 					number = parseInt(number);
+// 					number += 1;
+// 					return number;
+// 				}
+// 			} else {
+// 				number.splice(i);
+// 			}
+// 		}
+// 	}
+// 	number = number.join('');
+// 	console.log(number);
+
+// 	return parseInt(number);
+// };
+
+// Math.ceil = function (number) {
+// 	number = number.toString();
+// 	number = number.split('');
+// 	let decimalCheck = new Set(number);
+// 	if (!decimalCheck.has('.')) {
+// 		return parseInt(number.join(''));
+// 	}
+// 	for (let i = number.length; i > 0; i--) {
+// 		if (number[i] === '.') {
+// 			number.splice(i);
+// 		}
+// 	}
+// 	number = number.join('');
+// 	number = parseInt(number);
+// 	number += 1;
+// 	return number;
+// };
+
+// Math.floor = function (number) {
+// 	number = number.toString();
+// 	number = number.split('');
+// 	for (let i = number.length; i > 0; i--) {
+// 		if (number[i] === '.') {
+// 			number.splice(i);
+// 		}
+// 	}
+// 	number = number.join('');
+// 	number = parseInt(number);
+// 	return parseInt(number);
+// };
+
+/// https://www.codewars.com/kata/58b38256e51f1c2af0000081/train/javascript
+
+// 5kyu
+function bestMatch(ALAHLYGoals, zamalekGoals) {
+	let lowestDiff = ALAHLYGoals[0] - zamalekGoals[0];
+	let bestGame = 0;
+	for (let i = 0; i < ALAHLYGoals.length; i++) {
+		if (
+			ALAHLYGoals[i] - zamalekGoals[i] === lowestDiff &&
+			zamalekGoals[i] > zamalekGoals[bestGame]
+		) {
+			bestGame = i;
+		} else if (ALAHLYGoals[i] - zamalekGoals[i] < lowestDiff) {
+			bestGame = i;
+			lowestDiff = ALAHLYGoals[i] - zamalekGoals[i];
 		}
 	}
-	number = number.join('');
-	console.log(number);
-
-	return parseInt(number);
-};
-
-Math.ceil = function (number) {
-	number = number.toString();
-	number = number.split('');
-	let decimalCheck = new Set(number);
-	if (!decimalCheck.has('.')) {
-		return parseInt(number.join(''));
-	}
-	for (let i = number.length; i > 0; i--) {
-		if (number[i] === '.') {
-			number.splice(i);
-		}
-	}
-	number = number.join('');
-	number = parseInt(number);
-	number += 1;
-	return number;
-};
-
-Math.floor = function (number) {
-	number = number.toString();
-	number = number.split('');
-	for (let i = number.length; i > 0; i--) {
-		if (number[i] === '.') {
-			number.splice(i);
-		}
-	}
-	number = number.join('');
-	number = parseInt(number);
-	return parseInt(number);
-};
+	return bestGame;
+}
