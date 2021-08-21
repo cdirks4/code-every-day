@@ -745,39 +745,54 @@
 
 //https://www.codewars.com/kata/5a2c22271f7f709eaa0005d3/train/javascript
 // 6kyu
-function solve(s) {
-	s = s.toLowerCase();
-	s = s.split('');
-	let tester = [];
-	let holder = [];
-	let ok = true;
-	for (i = 0; i < s.length; i++) {
-		let remove = true;
+// function solve(s) {
+// 	s = s.toLowerCase();
+// 	s = s.split('');
+// 	let tester = [];
+// 	let holder = [];
+// 	let ok = true;
+// 	for (i = 0; i < s.length; i++) {
+// 		let remove = true;
 
-		if (s[i] !== s[s.length - i - 1]) {
-			ok = false;
+// 		if (s[i] !== s[s.length - i - 1]) {
+// 			ok = false;
+// 		}
+// 		holder = s[i];
+// 		s[i] = '';
+// 		tester = s.join('');
+// 		tester = tester.split('');
+
+// 		for (j = 0; j < tester.length; j++) {
+// 			if (tester[j] !== tester[tester.length - j - 1]) {
+// 				remove = false;
+// 			}
+// 		}
+
+// 		if (ok === true) remove = false;
+// 		s[i] = holder;
+// 		switch (true) {
+// 			case remove:
+// 				return 'remove one';
+
+// 			default:
+// 				break;
+// 		}
+// 	}
+// 	if (ok) return 'OK';
+// 	return 'not possible';
+// }
+
+//https://www.codewars.com/kata/523f5d21c841566fde000009/train/javascript
+
+// 6kyu
+
+function arrayDiff(a, b) {
+	let difference = [];
+	let remove = new Set(b);
+	a.forEach((integer) => {
+		if (!remove.has(integer)) {
+			difference.push(integer);
 		}
-		holder = s[i];
-		s[i] = '';
-		tester = s.join('');
-		tester = tester.split('');
-
-		for (j = 0; j < tester.length; j++) {
-			if (tester[j] !== tester[tester.length - j - 1]) {
-				remove = false;
-			}
-		}
-
-		if (ok === true) remove = false;
-		s[i] = holder;
-		switch (true) {
-			case remove:
-				return 'remove one';
-
-			default:
-				break;
-		}
-	}
-	if (ok) return 'OK';
-	return 'not possible';
+	});
+	return difference;
 }
