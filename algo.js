@@ -786,13 +786,49 @@
 
 // 6kyu
 
-function arrayDiff(a, b) {
-	let difference = [];
-	let remove = new Set(b);
-	a.forEach((integer) => {
-		if (!remove.has(integer)) {
-			difference.push(integer);
+// function arrayDiff(a, b) {
+// 	let difference = [];
+// 	let remove = new Set(b);
+// 	a.forEach((integer) => {
+// 		if (!remove.has(integer)) {
+// 			difference.push(integer);
+// 		}
+// 	});
+// 	return difference;
+// }
+
+// https://www.codewars.com/kata/52fba66badcd10859f00097e/train/javascript
+// 7kyu
+// function disemvowel(str) {
+// 	let vowels = new Set(['a', 'i', 'e', 'o', 'u']);
+// 	str = str.split('');
+// 	let consonants = [];
+// 	for (let i = 0; i < str.length; i++) {
+// 		if (!vowels.has(str[i].toLowerCase())) {
+// 			consonants.push(str[i]);
+// 		}
+// 	}
+// 	return consonants.join('');
+// }
+
+//https://www.codewars.com/kata/54bf1c2cd5b56cc47f0007a1/train/javascript
+
+//6kyu
+
+function duplicateCount(text) {
+	text = text.toLowerCase();
+	let total = 0;
+	text = text.split('');
+	let obj = text.reduce((acc, curr) => {
+		if (acc[curr]) {
+			acc[curr]++;
+		} else {
+			acc[curr] = 1;
 		}
-	});
-	return difference;
+		return acc;
+	}, {});
+	for (key in obj) {
+		if (obj[key] > 1) total++;
+	}
+	return total;
 }
