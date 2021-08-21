@@ -899,19 +899,48 @@
 /// https://www.codewars.com/kata/58b38256e51f1c2af0000081/train/javascript
 
 // 5kyu
-function bestMatch(ALAHLYGoals, zamalekGoals) {
-	let lowestDiff = ALAHLYGoals[0] - zamalekGoals[0];
-	let bestGame = 0;
-	for (let i = 0; i < ALAHLYGoals.length; i++) {
-		if (
-			ALAHLYGoals[i] - zamalekGoals[i] === lowestDiff &&
-			zamalekGoals[i] > zamalekGoals[bestGame]
-		) {
-			bestGame = i;
-		} else if (ALAHLYGoals[i] - zamalekGoals[i] < lowestDiff) {
-			bestGame = i;
-			lowestDiff = ALAHLYGoals[i] - zamalekGoals[i];
-		}
+// function bestMatch(ALAHLYGoals, zamalekGoals) {
+// 	let lowestDiff = ALAHLYGoals[0] - zamalekGoals[0];
+// 	let bestGame = 0;
+// 	for (let i = 0; i < ALAHLYGoals.length; i++) {
+// 		if (
+// 			ALAHLYGoals[i] - zamalekGoals[i] === lowestDiff &&
+// 			zamalekGoals[i] > zamalekGoals[bestGame]
+// 		) {
+// 			bestGame = i;
+// 		} else if (ALAHLYGoals[i] - zamalekGoals[i] < lowestDiff) {
+// 			bestGame = i;
+// 			lowestDiff = ALAHLYGoals[i] - zamalekGoals[i];
+// 		}
+// 	}
+// 	return bestGame;
+// }
+
+// https://www.codewars.com/kata/55beec7dd347078289000021/train/javascript
+
+// 6kyu
+
+function Node(data) {
+	this.data = data;
+	this.next = null;
+}
+
+function length(head) {
+	let count = 0;
+	while (head) {
+		head = head.next;
+		count++;
 	}
-	return bestGame;
+	return count;
+}
+
+function count(head, data) {
+	let occurance = 0;
+	while (head) {
+		if (head.data === data) {
+			occurance++;
+		}
+		head = head.next;
+	}
+	return occurance;
 }
